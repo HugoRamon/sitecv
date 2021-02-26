@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="styleresult.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <script language='Javascript' src="astuce.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="icon" type="image/png" href="logo.png" /> 
+        <title>Resultat !</title>
+    </head> 
+    <body>
+            <div class="container">
+                <div class="card">
+                    <div class="imgBx">
+                        <img src="running.png" width="90%">
+                    </div>
+                    <div class="contentBx">
+                    <h2>Tu es des Nike !</h2>
+                    <div class="size">
+                        <h3>Size :</h3>
+                        <span>39</span>
+                        <span>40</span>
+                        <span>41</span>
+                        <span>42</span>
+                    </div>
+                    <div class="color">
+                        <h3>Color :</h3>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <a href="https://www.nike.com/fr/">Buy Now</a>
+                </div>
+                </div>
+            </div>
+            <script type="text/Javascript" language="javascript">
+                genere_astuces();
+                function genere_astuces(){
+                    var tab_astuces = liste_astuces().split('|');
+                    var nb_astuces = tab_astuces.length;
+                    var nombre_alea = Math.floor(Math.random() * nb_astuces);
+                    document.getElementById('src').innerHTML = tab_astuces[nombre_alea];
+                }
+            </script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+html {
+  color: #555555;
+  font-size: 1.25em;
+  line-height: 1.5;
+  background-color: #fefefe;
+}
+
+#progress-cont {
+  height: 5px;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+#progress-bar {
+  height: 100%;
+  background-color: #374884;
+}

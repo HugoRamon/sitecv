@@ -1,0 +1,207 @@
+//index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aleatoire.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="v.png" /> 
+    <meta charset="utf-8"/>
+    <script language='Javascript' src="astuce.js"></script>
+</head>
+<body>
+<div class="aligncenter">
+    <center>
+        <font border color="#ffffff" size="50px" face="Verdana, Geneva, Tahoma, sans-serif">
+        <div class="astuce" id="calque_astuce">
+            Ceci est le titre.
+        </div>
+        </font>
+    <br><br>
+        <input type="button" value="Changer le titre" onclick="genere_astuces()"/>
+        <input type="button" value="Changer le fond" onclick="change_color()"/>
+        <input type="button" value="Changer la largeur" onclick="change_largeur()"/>
+        <input type="button" value="Changer la hauteur" onclick="change_hauteur()"/>
+    </center>
+</div>
+<script src="https://kit.fontawesome.com/6dd7ccfc27.js" crossorigin="anonymous"></script>
+<link rel="icon" type="image/png" href="./images/v.png"/>        
+<div class="social-menu">
+<ul>
+  <li><a href="https://www.facebook.com/hugo.ramonportugal" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+  <li><a href="https://www.instagram.com/hugoramonportugal/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+  <li><a href="mailto:hugo.ramonportugal@free.fr"><i class="far fa-envelope"></i></a></li>
+</ul>
+</div>
+<br><br>
+<center><p>Réalisé par Hugo RAMON PORTUGAL - Code source <a href="">ICI</a></p></center>
+<script type="text/Javascript" language="javascript">
+    function genere_astuces(){
+        var tab_astuces = liste_astuces().split('|');
+        var nb_astuces = tab_astuces.length;
+        var nombre_alea = Math.floor(Math.random() * nb_astuces);
+        document.getElementById('calque_astuce').innerHTML = tab_astuces[nombre_alea];
+    }
+    function change_color(){
+        const col1 = getRandomRBG();
+        const col2 = getRandomRBG();
+        const col3 = getRandomRBG();
+        const colorString = `rgb(${col1}, ${col2}, ${col3})`
+        document.body.style.background = colorString;
+    }
+    function getRandomRBG() {
+        return Math.floor(Math.random() * 256);
+    }
+    function getRandomPX() {
+        return Math.floor(Math.random() * 1000);
+    }
+    function change_hauteur(){
+        const hauteur = getRandomPX();
+        const hauteurString = `${hauteur}px`
+        document.getElementById('calque_astuce').style.height = hauteurString;
+    }
+    function change_largeur(){
+        const largeur = getRandomPX();
+        const largeurString = `${largeur}px`
+        document.getElementById('calque_astuce').style.width = largeurString;
+    }
+</script>
+</body>
+</html>
+
+//style.css
+body {
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-image: url(logo.gif);
+    background-position: center;
+    background-position: top;
+}
+
+p {
+    color: white;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p a {
+    color: red;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.astuce {
+    border-width:3px;
+    border-style:solid;
+    border-color:white;
+}
+
+input[type=button] {
+        background: #ffffff;
+        background-image: -webkit-linear-gradient(top, #ffffff, #f1f1f1);
+        background-image: -moz-linear-gradient(top, #ffffff, #f1f1f1);
+        background-image: -ms-linear-gradient(top, #ffffff, #f1f1f1);
+        background-image: -o-linear-gradient(top, #ffffff, #f1f1f1);
+        background-image: linear-gradient(to bottom, #ffffff, #f1f1f1);
+        -webkit-border-radius: 8;
+        -moz-border-radius: 8;
+        border-radius: 8px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #000000;
+        font-size: 20px;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+      }
+      
+input[type=button]:hover {
+        background: #ffffff;
+        background-image: -webkit-linear-gradient(top, #ffffff, #bababa);
+        background-image: -moz-linear-gradient(top, #ffffff, #bababa);
+        background-image: -ms-linear-gradient(top, #ffffff, #bababa);
+        background-image: -o-linear-gradient(top, #ffffff, #bababa);
+        background-image: linear-gradient(to bottom, #ffffff, #bababa);
+        text-decoration: none;
+      }
+
+.aligncenter {
+    display: block;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .social-menu ul {
+    display: flex;
+    margin-top: 200px;
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 50%;
+  }
+  
+  .social-menu ul li {
+    list-style: none;
+    margin: 0 25px;
+  }
+  
+  .social-menu ul li .fab {
+    font-size: 30px;
+    line-height:60px;
+    transition: .2s;
+    color: #000;
+  }
+  
+  .social-menu ul li .far {
+    font-size: 30px;
+    line-height:60px;
+    transition: .2s;
+    color: #000;
+  }
+  
+  .social-menu ul li .fab:hover {
+    color: #fff;
+  } 
+  
+  .social-menu ul li .far:hover {
+    color: #fff;  
+  } 
+  
+  .social-menu ul li a {
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background-color: #fff;
+    text-align: center;
+    transition: .2s;
+    box-shadow: 0 5px 4px rgba(0,0,0,.5);
+  }
+  
+  .social-menu ul li a:hover {
+    transform: translate(0, -10px);
+  }
+  
+  .social-menu ul li:nth-child(1) a:hover {
+    background-color: #3b5999;
+  }
+  
+  .social-menu ul li:nth-child(2) a:hover {
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,      #bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  }
+  
+  .social-menu ul li:nth-child(3) a:hover {
+    background-color: #461010;
+  }
+  
+  .social-menu ul li:nth-child(4) a:hover {
+    background-color: #cd201f;
+  }
+  
+  .social-menu ul li:nth-child(5) a:hover {
+    background-color: #fe5000;
+  }
